@@ -1,9 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
+import Routes from "./Routes";
+import NavBar from "./NavBar";
 import "./App.css";
 
 function App() {
-	return <div className="App"></div>;
+	return (
+		<div className="App">
+			<NavBar />
+			<Routes />
+		</div>
+	);
 }
 
 export default App;
