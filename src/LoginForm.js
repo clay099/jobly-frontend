@@ -5,7 +5,7 @@ import { Button, Form, Input, FormGroup, Label, Alert } from "reactstrap";
 import JoblyApi from "./JoblyApi";
 import "./LoginForm.css";
 
-const LoginForm = ({ setLoggedIn }) => {
+const LoginForm = ({ setLoggedIn, loginHidden }) => {
 	const [alertMessage, setAlertMessage] = useState("");
 
 	const INITIALSTATE = { username: "", password: "" };
@@ -26,7 +26,7 @@ const LoginForm = ({ setLoggedIn }) => {
 	};
 
 	return (
-		<Form className="LoginForm" onSubmit={handleSubmit}>
+		<Form className={`LoginForm ${loginHidden}`} onSubmit={handleSubmit}>
 			<FormGroup>
 				<Label for="username">Email</Label>
 				<Input

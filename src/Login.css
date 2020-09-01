@@ -1,0 +1,10 @@
+.Login {
+	width: 40%;
+	margin: auto;
+	margin-top: 10%;
+	text-align: right;
+}
+
+.Login .hidden {
+	display: none;
+}

@@ -54,6 +54,22 @@ class JoblyApi {
 		localStorage.setItem("_token", res.token);
 		return res.token;
 	}
+
+	static async submitRegister({
+		username,
+		password,
+		first_name,
+		last_name,
+		email,
+	}) {
+		let res = await this.request(
+			"users/",
+			{ username, password, first_name, last_name, email },
+			"post"
+		);
+		localStorage.setItem("_token", res.token);
+		return res.token;
+	}
 }
 
 export default JoblyApi;
