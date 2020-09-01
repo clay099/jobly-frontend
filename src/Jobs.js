@@ -1,6 +1,6 @@
 import React from "react";
 import CardList from "./CardList";
-import NewForm from "./NewForm";
+import SearchForm from "./SearchForm";
 import useSearch from "./hooks/useSearch";
 
 const Jobs = ({ jobs }) => {
@@ -9,7 +9,7 @@ const Jobs = ({ jobs }) => {
 	if (foundJobs === "no data") {
 		return (
 			<>
-				<NewForm setSearch={setSearch} />
+				<SearchForm setSearch={setSearch} />
 				<h3>Sorry, no results were found!</h3>
 			</>
 		);
@@ -20,7 +20,7 @@ const Jobs = ({ jobs }) => {
 	return (
 		<div>
 			<>
-				<NewForm setSearch={setSearch} />
+				<SearchForm setSearch={setSearch} />
 				{jobs.map((job) => (
 					<CardList job={job} key={job.id} />
 				))}

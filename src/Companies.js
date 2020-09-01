@@ -1,6 +1,6 @@
 import React from "react";
 import CardList from "./CardList";
-import NewForm from "./NewForm";
+import SearchForm from "./SearchForm";
 import useSearch from "./hooks/useSearch";
 
 const Companies = ({ companies }) => {
@@ -9,7 +9,7 @@ const Companies = ({ companies }) => {
 	if (foundCompanies === "no data") {
 		return (
 			<>
-				<NewForm setSearch={setSearch} />
+				<SearchForm setSearch={setSearch} />
 				<h3>Sorry, no results were found!</h3>
 			</>
 		);
@@ -19,7 +19,7 @@ const Companies = ({ companies }) => {
 
 	return (
 		<>
-			<NewForm setSearch={setSearch} />
+			<SearchForm setSearch={setSearch} />
 			{companies.map((c) => (
 				<CardList company={c} key={c.handle} />
 			))}
