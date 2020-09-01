@@ -52,6 +52,8 @@ class JoblyApi {
 	static async submitLogin(username, password) {
 		let res = await this.request("login/", { username, password }, "post");
 		localStorage.setItem("_token", res.token);
+		localStorage.setItem("username", username);
+
 		return res.token;
 	}
 
@@ -68,15 +70,14 @@ class JoblyApi {
 			"post"
 		);
 		localStorage.setItem("_token", res.token);
+		localStorage.setItem("username", username);
 		return res.token;
 	}
 
-	// static async getUserData(username) {
-	// 	let res = await this.request(`users/${username}`);
-	// 	console.log(res);
-	// 	localStorage.setItem("userData", JSON.stringify(res.user));
-	// 	return res;
-	// }
+	static async getUserData(username) {
+		let res = await this.request(`users/${username}`);
+		return res.user;
+	}
 }
 
 export default JoblyApi;

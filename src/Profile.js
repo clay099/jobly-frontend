@@ -1,5 +1,6 @@
 import React from "react";
 import useCheckLogin from "./hooks/useCheckLogin";
+import UpdateProfileForm from "./UpdateProfileForm";
 
 const Profile = () => {
 	let checkLogin = useCheckLogin();
@@ -7,11 +8,7 @@ const Profile = () => {
 		return checkLogin;
 	}
 
-	return (
-		<div>
-			<p>Profile</p>
-		</div>
-	);
+	return <UpdateProfileForm />;
 };
 
 export default Profile;

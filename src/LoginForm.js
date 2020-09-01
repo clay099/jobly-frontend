@@ -28,7 +28,7 @@ const LoginForm = ({ setLoggedIn, loginHidden }) => {
 	return (
 		<Form className={`LoginForm ${loginHidden}`} onSubmit={handleSubmit}>
 			<FormGroup>
-				<Label for="username">Email</Label>
+				<Label for="username">Username</Label>
 				<Input
 					type="text"
 					name="username"

@@ -38,7 +38,7 @@ const RegisterForm = ({ setLoggedIn, registerHidden }) => {
 			onSubmit={handleSubmit}
 		>
 			<FormGroup>
-				<Label for="username">Email</Label>
+				<Label for="username">Username</Label>
 				<Input
 					type="text"
 					name="username"
