@@ -24,7 +24,7 @@ const useSearch = (searchType) => {
 			}
 		}
 		startSearch();
-	}, [search]);
+	}, [search, searchType]);
 
 	return [filteredItem, setSearch];
 };

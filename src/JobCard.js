@@ -2,7 +2,6 @@ import React from "react";
 import { CardBody, CardTitle, CardText } from "reactstrap";
 
 const JobCard = ({ cardDetails }) => {
-	console.log(cardDetails);
 	return (
 		<>
 			<CardBody>

@@ -28,7 +28,7 @@ const CompanyCard = ({ cardDetails }) => {
 						<img
 							className="CompanyCard-img"
 							src={cardDetails.logo_url}
-							alt={`${cardDetails.handle} Image`}
+							alt={cardDetails.handle}
 						/>
 					</Row>
 				</CardBody>

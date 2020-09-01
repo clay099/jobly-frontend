@@ -5,6 +5,7 @@ import Companies from "./Companies";
 import Company from "./Company";
 import Jobs from "./Jobs";
 import Login from "./Login";
+import Logout from "./Logout";
 import Profile from "./Profile";
 import { Container } from "reactstrap";
 import JoblyApi from "./JoblyApi";
@@ -13,6 +14,7 @@ const Routes = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [companies, setCompanies] = useState([]);
 	const [jobs, setJobs] = useState([]);
+	
 
 	useEffect(() => {
 		async function getDetails() {
@@ -30,8 +32,8 @@ const Routes = () => {
 	}, [isLoading]);
 
 	return (
-		<Switch>
-			<Container>
+		<Container>
+			<Switch>
 				<Route exact path="/companies/:name">
 					<Company companies={companies} />
 				</Route>
@@ -44,14 +46,17 @@ const Routes = () => {
 				<Route exact path="/login">
 					<Login />
 				</Route>
+				<Route exact path="/logout">
+					<Logout />
+				</Route>
 				<Route exact path="/profile">
 					<Profile />
 				</Route>
 				<Route exact path="/">
 					<Home />
 				</Route>
-			</Container>
-		</Switch>
+			</Switch>
+		</Container>
 	);
 };
 

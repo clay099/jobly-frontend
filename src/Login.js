@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Redirect } from "react-router-dom";
+import LoginForm from "./LoginForm";
+import LoggedInContext from "./LoggedInContext";
 
 const Login = () => {
-	return (
-		<div>
-			<p>Login</p>
-		</div>
+	const { loggedIn, setLoggedIn } = useContext(LoggedInContext);
+
+	return loggedIn ? (
+		<Redirect to="/jobs" />
+	) : (
+		<LoginForm setLoggedIn={setLoggedIn} />
 	);
 };
 
