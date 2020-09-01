@@ -1,0 +1,13 @@
+.card {
+	box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+	margin: 1rem 0rem;
+}
+
+.card:hover {
+	box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.2);
+	margin: 1rem 0rem;
+}
+
+.card-company:hover {
+	color: #007bff;
+}

@@ -1,3 +1,5 @@
+import axios from "axios";
+
 class JoblyApi {
 	static async request(endpoint, paramsOrData = {}, verb = "get") {
 		paramsOrData._token = // for now, hardcode token for "testing"
@@ -25,8 +27,30 @@ class JoblyApi {
 		}
 	}
 
+	static async getCompanies() {
+		let res = await this.request(`companies/`);
+		return res.companies;
+	}
+
+	static async searchCompanies(searchTerm) {
+		let res = await this.request(`companies/`, { search: searchTerm });
+		return res.companies;
+	}
+
 	static async getCompany(handle) {
 		let res = await this.request(`companies/${handle}`);
 		return res.company;
 	}
+
+	static async getJobs() {
+		let res = await this.request(`jobs/`);
+		return res.jobs;
+	}
+
+	static async searchJobs(searchTerm) {
+		let res = await this.request(`jobs/`, { search: searchTerm });
+		return res.jobs;
+	}
 }
+
+export default JoblyApi;

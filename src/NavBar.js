@@ -19,7 +19,7 @@ const NavBar = () => {
 		<div>
 			<Navbar expand="md" color="light" light>
 				<NavbarBrand>
-					<NavLink className="nav-link" to="/">
+					<NavLink className="nav-link" exact to="/">
 						Jobly
 					</NavLink>
 				</NavbarBrand>
@@ -28,22 +28,17 @@ const NavBar = () => {
 				<Collapse isOpen={!collapsed} navbar>
 					<Nav className="ml-auto" navbar>
 						<NavItem>
-							<NavLink className="nav-link" to="/companies">
+							<NavLink className="nav-link" exact to="/companies">
 								Companies
 							</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink className="nav-link" to="/companies/:name">
-								Company Single
-							</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink className="nav-link" to="/jobs">
+							<NavLink className="nav-link" exact to="/jobs">
 								Jobs
 							</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink className="nav-link" to="/profile">
+							<NavLink className="nav-link" exact to="/profile">
 								Profile
 							</NavLink>
 						</NavItem>
