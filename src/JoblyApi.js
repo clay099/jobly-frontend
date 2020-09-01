@@ -78,6 +78,21 @@ class JoblyApi {
 		let res = await this.request(`users/${username}`);
 		return res.user;
 	}
+
+	static async updateUserData({
+		username,
+		password,
+		first_name,
+		last_name,
+		email,
+	}) {
+		let res = await this.request(
+			`users/${username}`,
+			{ password, first_name, last_name, email },
+			"patch"
+		);
+		return res.user;
+	}
 }
 
 export default JoblyApi;
