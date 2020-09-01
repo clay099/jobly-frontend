@@ -2,9 +2,15 @@ import React from "react";
 import CardList from "./CardList";
 import SearchForm from "./SearchForm";
 import useSearch from "./hooks/useSearch";
+import useCheckLogin from "./hooks/useCheckLogin";
 
 const Companies = ({ companies }) => {
 	const [foundCompanies, setSearch] = useSearch("companies");
+
+	let checkLogin = useCheckLogin();
+	if (checkLogin) {
+		return checkLogin;
+	}
 
 	if (foundCompanies === "no data") {
 		return (

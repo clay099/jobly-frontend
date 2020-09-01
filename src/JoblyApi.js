@@ -70,6 +70,13 @@ class JoblyApi {
 		localStorage.setItem("_token", res.token);
 		return res.token;
 	}
+
+	// static async getUserData(username) {
+	// 	let res = await this.request(`users/${username}`);
+	// 	console.log(res);
+	// 	localStorage.setItem("userData", JSON.stringify(res.user));
+	// 	return res;
+	// }
 }
 
 export default JoblyApi;

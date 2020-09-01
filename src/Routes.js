@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./Home";
 import Companies from "./Companies";
 import Company from "./Company";
@@ -14,7 +14,6 @@ const Routes = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [companies, setCompanies] = useState([]);
 	const [jobs, setJobs] = useState([]);
-	
 
 	useEffect(() => {
 		async function getDetails() {
@@ -55,6 +54,7 @@ const Routes = () => {
 				<Route exact path="/">
 					<Home />
 				</Route>
+				<Redirect to="/" />
 			</Switch>
 		</Container>
 	);
