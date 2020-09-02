@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import JoblyApi from "./JoblyApi";
 import { Button, Form, Input, FormGroup, Label, Alert } from "reactstrap";
 import useFields from "./hooks/useFields";
-import { useHistory } from "react-router-dom";
 
 const UpdateProfileForm = () => {
 	const [alertMessage, setAlertMessage] = useState("");
@@ -12,8 +11,6 @@ const UpdateProfileForm = () => {
 	const [formData, handleChange, resetForm, setFormData] = useFields(
 		initialstate
 	);
-
-	const history = useHistory();
 
 	const [userDetails, setUserDetails] = useState(initialstate);
 	useEffect(() => {
@@ -25,7 +22,7 @@ const UpdateProfileForm = () => {
 		}
 		const username = localStorage.getItem("username");
 		getAllUserDetails(username);
-	}, []);
+	}, [setFormData]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

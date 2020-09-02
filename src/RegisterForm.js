@@ -26,7 +26,6 @@ const RegisterForm = ({ setLoggedIn, registerHidden }) => {
 			history.push("/jobs");
 		} catch (e) {
 			setAlertMessage(e);
-			console.log(e);
 		}
 
 		resetForm();
