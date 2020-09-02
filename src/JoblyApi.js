@@ -1,5 +1,8 @@
 import axios from "axios";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+console.log("process env ", process.env.REACT_APP_BASE_URL);
+console.log("BASE_URL ", BASE_URL);
 class JoblyApi {
 	static async request(endpoint, paramsOrData = {}, verb = "get") {
 		paramsOrData._token = localStorage.getItem("_token");
@@ -7,8 +10,6 @@ class JoblyApi {
 		console.debug("API Call:", endpoint, paramsOrData, verb);
 
 		try {
-			const BASE_URL =
-				process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 			return (
 				await axios({
 					method: verb,
